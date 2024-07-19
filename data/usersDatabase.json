@@ -1,0 +1,33 @@
+[
+   {
+     "name": "AlbertoMariani",
+     "pass": "pass01",
+     "role": "employee"
+   },
+   {
+     "name": "CarlaMartinez",
+     "pass": "pass02",
+     "role": "employee"
+   },
+   {
+     "name": "BelenSartirana",
+     "pass": "pass03",
+     "role": "employee"
+   },
+   {
+     "name": "AndresMendez",
+     "pass": "pass04",
+     "role": "student"
+   },
+   {
+     "name": "IsabellaRomano",
+     "pass": "pass05",
+     "role": "student"
+   },
+   {
+     "name": "AzulSantoro",
+     "pass": "pass06",
+     "role": "teacher"
+   }
+ ]
+ 

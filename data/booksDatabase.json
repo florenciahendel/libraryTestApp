@@ -1,0 +1,102 @@
+[
+    {
+      "id": 1,
+      "name": "Enciclopedia Encarta 1998",
+      "author": "Microsoft",
+      "publisher": "Microsoft",
+      "type": "CD",
+      "state": "ACTIVE",
+      "stock": 0
+    },
+    {
+      "id": 2,
+      "name": "Ricky Martin: Black and White Tour",
+      "author": "Ricky Martin",
+      "publisher": "Sony Music",
+      "type": "DVD",
+      "state": "ACTIVE",
+      "stock": 0
+    },
+    {
+      "id": 3,
+      "name": "El señor de los anillos",
+      "author": "J.R.R. Tolkien",
+      "publisher": "Minotauro",
+      "type": "Libro",
+      "state": "ACTIVE",
+      "stock": 0
+    },
+    {
+      "id": 4,
+      "name": "La historia argentina contada por mujeres",
+      "author": "Gabriela Margall",
+      "publisher": "Ediciones B",
+      "type": "Libro",
+      "state": "ACTIVE",
+      "stock": 3
+    },
+    {
+      "id": 5,
+      "name": "Juego de tronos",
+      "author": "George R.R. Martin",
+      "publisher": "Ediciones Gigamesh",
+      "type": "E-book",
+      "state": "ACTIVE",
+      "stock": 4
+    },
+    {
+      "id": 6,
+      "name": "El principito",
+      "author": "Antoine de Saint-Exupéry",
+      "publisher": "Harbrace Paperbound Library",
+      "type": "Libro",
+      "state": "ACTIVE",
+      "stock": 4
+    },
+    {
+      "id": 7,
+      "name": "Historia Económica de la Argentina",
+      "author": "Eduardo Miguez",
+      "publisher": "Sudamericana",
+      "type": "CD",
+      "state": "ACTIVE",
+      "stock": 5
+    },
+    {
+      "id": 8,
+      "name": "Inception",
+      "author": "Christopher Nolan",
+      "publisher": "Warner Bros.",
+      "type": "DVD",
+      "state": "ACTIVE",
+      "stock": 5
+    },
+    {
+      "id": 9,
+      "name": "Clean Code: A Handbook of Agile Software Craftsmanship",
+      "author": "Robert C. Martin",
+      "publisher": "Prentice Hall",
+      "type": "E-book",
+      "state": "ACTIVE",
+      "stock": 6
+    },
+    {
+      "id": 10,
+      "name": "Revista National Geographic",
+      "author": "Jane Smith",
+      "publisher": "National Geographic Society",
+      "type": "Revista",
+      "state": "ACTIVE",
+      "stock": 0
+    },
+    {
+      "id": 11,
+      "name": "Wired",
+      "author": "Mary Johnson",
+      "publisher": "Condé Nast",
+      "type": "Revista",
+      "state": "ACTIVE",
+      "stock": 7
+    }
+  ]
+  

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <title>Biblioteca Universidad - Principal</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script defer src="insertBook.js"></script>
+    <script defer src="reserveBook.js"></script>
+</head>
+
+<body>
+    <header>
+        <!--Navigation-->
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                        <img
+                            src="img/logo.png"
+                            alt="logo"
+                            width="100" />
+                    </a>
+
+                <!--Hamburger menu button-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#libraryNavbar"
+                    aria-controls="libraryNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!--Navigation Bar-->
+                <div class="collapse navbar-collapse" id="libraryNavbar">
+                    <!--Navigation buttons-->
+                    <ul class="navbar-nav me-auto">
+                        <li id="bookReservation" class="nav-item btn btn-primary d-none student teacher"
+                            data-bs-toggle="modal" data-bs-target="#bookReservationModal">
+                            Reserva de libro
+                        </li>
+                        <li id="bookInsertion" class="nav-item btn btn-primary d-none employee" data-bs-toggle="modal"
+                            data-bs-target="#bookInsertionModal">
+                            Alta de Ejemplare
+                        </li>
+                    </ul>
+
+                    <!--Book Reservation Modal-->
+                    <div class="modal fade" id="bookReservationModal" tabindex="-1"
+                        aria-labelledby="bookReservationModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="bookReservationModalLabel">
+                                        Reserva de Ejemplares
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="inputCodeSearch" class="form-label">
+                                            Código de ejemplar</label>
+                                        <input type="number" class="form-control" id="inputCodeSearch" />
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button id="goBack" type="button" class="btn btn-secondary">Volver</button>
+                                    <button type="button" class="btn btn-primary" id="search" data-bs-target="#confirmReservation" data-bs-toggle="modal">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Reserve Confirmation Modal-->
+                    <div class="modal fade" id="confirmReservation" aria-hidden="true"
+                        aria-labelledby="closeModalTitle" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="closeModalTitle">
+                                        Reservar ejemplar
+                                    </h1>
+                                </div>
+                                <div class="modal-body" id="selectedBookInfo">                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" data-bs-target="#bookReservationModal"
+                                        data-bs-toggle="modal">
+                                        Volver
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="confirmReservationBtn">
+                                        Reservar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Book Insertion Modal-->
+                    <div class="modal fade" id="bookInsertionModal" tabindex="-1"
+                        aria-labelledby="bookInsertionModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="bookInsertionModalLabel">
+                                        Alta de Ejemplar
+                                    </h1>
+                                </div>
+
+                                <div class="modal-body">
+                                    <!-- Insertion Form -->
+                                    <form id="newBookForm">
+                                        <div class="mb-3">
+                                            <label for="bookId" class="form-label">ID</label>
+                                            <input type="number" class="form-control" maxlength="50" id="bookId"
+                                                disabled />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="inputBookName" class="form-label">Nombre del ejemplar</label>
+                                            <input type="text" class="form-control" id="inputBookName" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="inputBookAuthor" class="form-label">Nombre del autor</label>
+                                            <input type="text" class="form-control" id="inputBookAuthor" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="inputBookPublisher" class="form-label">Editorial</label>
+                                            <input type="text" class="form-control" id="inputBookPublisher" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="selectBookType" class="form-label">Tipo</label>
+                                            <select class="form-select" id="selectBookType">
+                                                <option value="libro">
+                                                    Libro
+                                                </option>
+                                                <option value="Revista">
+                                                    Revista
+                                                </option>
+                                                <option value="CD">
+                                                    CD
+                                                </option>
+                                                <option value="DVD">
+                                                    DVD
+                                                </option>
+                                                <option value="E-book">
+                                                    E-book
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="bookState" class="form-label">Estado</label>
+                                            <input type="text" class="form-control" id="bookState" value="ACTIVO"/>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-target="#confirmCancellation" data-bs-toggle="modal" id="cancelBookBtn">
+                                        Cancelar
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="saveBookBtn">
+                                        Guardar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insert Confirmation modal-->
+                    <div class="modal fade" id="confirmCancellation" aria-hidden="true"
+                        aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
+                                        Confirmar cancelación
+                                    </h1>
+                                </div>
+                                <div class="modal-body">
+                                    Al Cancelar se borrarán todos los datos
+                                    cargados ¿está seguro?
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" data-bs-target="#bookInsertionModal"
+                                        data-bs-toggle="modal">
+                                        NO
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="confirmCancellationBtn">
+                                        SI
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main></main>
+</body>
+
+</html>
